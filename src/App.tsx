@@ -1,16 +1,17 @@
 import { useState } from 'react';
 import styles from './app.module.css';
+import { Addusers } from './components/addusers';
 import { Usercard } from './components/usercard';
 import { v4 as uuid } from 'uuid';
 type User = { name: string; score: number; id: string };
 
 function App() {
-  const [users, setUsers] = useState<User[]>([
-    { name: 'anna', score: 301, id: uuid() },
-    { name: 'bernd', score: 201, id: uuid() },
-    { name: 'carsten', score: 501, id: uuid() },
-    { name: 'doris', score: 401, id: uuid() },
-  ]);
+  const [users, setUsers] = useState<User[]>([]);
+
+  function addUser(user: User) {
+    setUsers((prev) => [...prev, user]);
+  }
+
   return (
     <div className={styles.appwraper}>
       <div className={styles.app}>
@@ -21,6 +22,11 @@ function App() {
             score={user.score}
           ></Usercard>
         ))}
+        <Addusers
+          onClick={() =>
+            addUser({ name: 'anna', score: 301, id: uuid() })
+          }
+        />
       </div>
     </div>
   );
