@@ -7,6 +7,7 @@ type User = { name: string; score: number; id: string };
 function App() {
   const [users, setUsers] = useState<User[]>([
     { name: 'anna', score: 301, id: uuid() },
+    { name: 'bernd', score: 201, id: uuid() },
   ]);
   return (
     <div>
