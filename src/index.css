@@ -27,3 +27,6 @@ body {
   min-height: 100vh;
   color: whitesmoke;
 }
+#root {
+  width: 100%;
+}

@@ -34,4 +34,8 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  cursor: pointer;
+}
+.addpoints:hover {
+  background-color: #888;
 }
