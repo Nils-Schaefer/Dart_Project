@@ -2,7 +2,7 @@ import { useMemo } from 'react';
 import styles from './usercard.module.css';
 export function Usercard(props: { score: number; name: string }) {
   const iconcolor = useMemo(
-    () => `hsl(${Math.floor(Math.random() * 18) * 20} 50% 50%)`,
+    () => `hsl(${Math.floor(Math.random() * 18) * 20} 60% 50%)`,
     []
   );
 

@@ -3,6 +3,7 @@ import styles from './app.module.css';
 import { Addusers } from './components/addusers';
 import { Usercard } from './components/usercard';
 import { v4 as uuid } from 'uuid';
+import { Modal } from './components/modal';
 type User = { name: string; score: number; id: string };
 
 function App() {
@@ -14,6 +15,10 @@ function App() {
 
   return (
     <div className={styles.appwraper}>
+      <Modal open={false} setOpen={() => null}>
+        asdasd
+      </Modal>
+
       <div className={styles.app}>
         {users.map((user) => (
           <Usercard
@@ -24,7 +29,7 @@ function App() {
         ))}
         <Addusers
           onClick={() =>
-            addUser({ name: 'anna', score: 301, id: uuid() })
+            addUser({ name: 'Nils', score: 301, id: uuid() })
           }
         />
       </div>
