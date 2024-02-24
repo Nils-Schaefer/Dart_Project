@@ -12,7 +12,7 @@ export function Usercard(props: { score: number; name: string }) {
         className={styles.playericon}
         style={{ background: iconcolor }}
       >
-        {props.name[0].toUpperCase()}
+        {props.name[0]?.toUpperCase() ?? '?'}
       </div>
       <div className={styles.playername}>{props.name}</div>
       <div className={styles.playerscore}>{props.score}</div>

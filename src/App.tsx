@@ -2,7 +2,6 @@ import { useState } from 'react';
 import styles from './app.module.css';
 import { Addusers } from './components/Adduser/addusers';
 import { Usercard } from './components/Usercard/usercard';
-import { Modal } from './components/modal';
 import { AddUserCardModal } from './components/Usercard/Addusercard/addusercardmodal';
 import { User } from './types';
 
@@ -12,6 +11,7 @@ function App() {
     useState(true);
 
   function addUser(user: User) {
+    console.log(user);
     setUsers((prev) => [...prev, user]);
   }
 
