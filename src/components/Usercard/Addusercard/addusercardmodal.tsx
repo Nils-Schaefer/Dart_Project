@@ -3,6 +3,7 @@ import { User } from '../../../types';
 import { Basemodalprops, Modal } from '../../modal';
 import styles from './addusercardmodal.module.css';
 import { v4 as uuid } from 'uuid';
+import { Button } from '../../Button/Button';
 
 export function AddUserCardModal(
   props: Basemodalprops & { addUser: (user: User) => void }
@@ -39,7 +40,9 @@ export function AddUserCardModal(
           value={name}
           onChange={(event) => setname(event.target.value)}
         ></input>
-        <button type="submit">Hinzufügen</button>
+        <Button type="submit" disabled={name.length === 0}>
+          Hinzufügen
+        </Button>
       </form>
     </Modal>
     //

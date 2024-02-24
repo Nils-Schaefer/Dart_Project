@@ -1,0 +1,16 @@
+.button {
+  all: unset;
+  background-color: #222;
+  padding: 0.5rem 1rem;
+  color: #fff;
+  border-radius: 0.25rem;
+  font-weight: 400;
+  cursor: pointer;
+}
+.button:disabled {
+  cursor: not-allowed;
+  color: #666;
+}
+.button:hover:not(:disabled) {
+  background-color: #262626;
+}
