@@ -1,10 +1,14 @@
 import { ReactNode } from 'react';
 import styles from './modal.module.css';
-export function Modal(props: {
+
+export type Basemodalprops = {
   open: boolean;
   setOpen: (value: boolean) => void;
-  children: ReactNode;
-}) {
+};
+
+export function Modal(
+  props: Basemodalprops & { children: ReactNode }
+) {
   if (!props.open) {
     return null;
   }
@@ -12,7 +16,12 @@ export function Modal(props: {
   return (
     <div className={styles.dark}>
       <div className={styles.modal}>
-        <div className={styles.close}>X</div>
+        <div
+          className={styles.close}
+          onClick={() => props.setOpen(false)}
+        >
+          X
+        </div>
         <div className={styles.content}>{props.children}</div>
       </div>
     </div>

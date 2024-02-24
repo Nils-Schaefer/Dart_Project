@@ -1,13 +1,15 @@
 import { useState } from 'react';
 import styles from './app.module.css';
-import { Addusers } from './components/addusers';
-import { Usercard } from './components/usercard';
-import { v4 as uuid } from 'uuid';
+import { Addusers } from './components/Adduser/addusers';
+import { Usercard } from './components/Usercard/usercard';
 import { Modal } from './components/modal';
-type User = { name: string; score: number; id: string };
+import { AddUserCardModal } from './components/Usercard/Addusercard/addusercardmodal';
+import { User } from './types';
 
 function App() {
   const [users, setUsers] = useState<User[]>([]);
+  const [addUserCardModalOpen, setAddUserCardModalOpen] =
+    useState(true);
 
   function addUser(user: User) {
     setUsers((prev) => [...prev, user]);
@@ -15,10 +17,11 @@ function App() {
 
   return (
     <div className={styles.appwraper}>
-      <Modal open={false} setOpen={() => null}>
-        asdasd
-      </Modal>
-
+      <AddUserCardModal
+        open={addUserCardModalOpen}
+        setOpen={setAddUserCardModalOpen}
+        addUser={addUser}
+      ></AddUserCardModal>
       <div className={styles.app}>
         {users.map((user) => (
           <Usercard
@@ -27,11 +30,7 @@ function App() {
             score={user.score}
           ></Usercard>
         ))}
-        <Addusers
-          onClick={() =>
-            addUser({ name: 'Nils', score: 301, id: uuid() })
-          }
-        />
+        <Addusers onClick={() => setAddUserCardModalOpen(true)} />
       </div>
     </div>
   );
