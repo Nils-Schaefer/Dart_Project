@@ -1,0 +1,12 @@
+.input {
+  all: unset;
+  background-color: #222;
+  color: #ccc;
+  border-radius: 1.5rem;
+  text-align: center;
+  padding: 0.5rem 1rem;
+}
+.input::placeholder {
+  all: unset;
+  color: #666;
+}
