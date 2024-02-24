@@ -6,6 +6,7 @@
   border-radius: 0.25rem;
   font-weight: 400;
   cursor: pointer;
+  text-align: center;
 }
 .button:disabled {
   cursor: not-allowed;

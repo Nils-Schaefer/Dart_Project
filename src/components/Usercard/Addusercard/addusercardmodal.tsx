@@ -25,6 +25,7 @@ export function AddUserCardModal(
   return (
     <Modal open={props.open} setOpen={props.setOpen}>
       <form
+        className={styles.content}
         onSubmit={(event) => {
           event.preventDefault();
           props.addUser({
