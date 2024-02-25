@@ -23,17 +23,17 @@ export function AddUserCardModal(
   }, [props.open]);
 
   return (
-    <Modal open={props.open} setOpen={props.setOpen}>
+    <Modal open={props.open} closeModal={props.closeModal}>
       <form
         className={styles.content}
         onSubmit={(event) => {
           event.preventDefault();
           props.addUser({
             name,
-            score: 0,
+            score: 301,
             id: uuid(),
           });
-          props.setOpen(false);
+          props.closeModal();
         }}
       >
         <Input
@@ -47,6 +47,5 @@ export function AddUserCardModal(
         </Button>
       </form>
     </Modal>
-    //
   );
 }

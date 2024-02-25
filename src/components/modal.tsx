@@ -3,7 +3,7 @@ import styles from './modal.module.css';
 
 export type Basemodalprops = {
   open: boolean;
-  setOpen: (value: boolean) => void;
+  closeModal: () => void;
 };
 
 export function Modal(
@@ -18,7 +18,7 @@ export function Modal(
       <div className={styles.modal}>
         <div
           className={styles.close}
-          onClick={() => props.setOpen(false)}
+          onClick={() => props.closeModal()}
         >
           X
         </div>

@@ -1,6 +1,13 @@
 import { useMemo } from 'react';
 import styles from './usercard.module.css';
-export function Usercard(props: { score: number; name: string }) {
+
+type UsercardProps = {
+  score: number;
+  name: string;
+  onAddPoints: () => void;
+};
+
+export function Usercard(props: UsercardProps) {
   const iconcolor = useMemo(
     () => `hsl(${Math.floor(Math.random() * 18) * 20} 60% 50%)`,
     []
@@ -16,7 +23,9 @@ export function Usercard(props: { score: number; name: string }) {
       </div>
       <div className={styles.playername}>{props.name}</div>
       <div className={styles.playerscore}>{props.score}</div>
-      <div className={styles.addpoints}>+</div>
+      <div className={styles.addpoints} onClick={props.onAddPoints}>
+        +
+      </div>
     </div>
   );
 }
